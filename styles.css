@@ -12,10 +12,6 @@
     --sub-color: #4f5660;
     --sub-alt-color: #e3e5e8;
     --text-color: #1e1f22;
-    --error-color: #d83c3e;
-    --error-extra-color: #b73234;
-    --colorful-error-color: #e03131;
-    --colorful-error-extra-color: #c92a2a;
 }
 
 :root[data-theme="dark"] {
@@ -25,10 +21,6 @@
     --sub-color: #565861;
     --sub-alt-color: #2b2d31;
     --text-color: #dcdee3;
-    --error-color: #df4f4b;
-    --error-extra-color: #df4f4b;
-    --colorful-error-color: #df4f4b;
-    --colorful-error-extra-color: #df4f4b;
 }
 
 /* dark mode */
@@ -40,10 +32,6 @@
         --sub-color: #565861;
         --sub-alt-color: #2b2d31;
         --text-color: #dcdee3;
-        --error-color: #df4f4b;
-        --error-extra-color: #df4f4b;
-        --colorful-error-color: #df4f4b;
-        --colorful-error-extra-color: #df4f4b;
 
         color-scheme: dark;
     }
