@@ -1,0 +1,127 @@
+:root {
+    color-scheme: light dark;
+    --musicBtn-shadow-color: var(--main-color);
+    --musicBtn-box-shadow: 0px 0px 1rem 0.2rem var(--musicBtn-shadow-color);
+}
+
+/* light mode {by default} */
+:root {
+    --bg-color: #f2f3f5;
+    --main-color: #5865f2;
+    --caret-color: #5865f2;
+    --sub-color: #4f5660;
+    --sub-alt-color: #e3e5e8;
+    --text-color: #1e1f22;
+    --error-color: #d83c3e;
+    --error-extra-color: #b73234;
+    --colorful-error-color: #e03131;
+    --colorful-error-extra-color: #c92a2a;
+}
+
+:root[data-theme="dark"] {
+    --bg-color: #313338;
+    --main-color: #5a65ea;
+    --caret-color: #5a65ea;
+    --sub-color: #565861;
+    --sub-alt-color: #2b2d31;
+    --text-color: #dcdee3;
+    --error-color: #df4f4b;
+    --error-extra-color: #df4f4b;
+    --colorful-error-color: #df4f4b;
+    --colorful-error-extra-color: #df4f4b;
+}
+
+/* dark mode */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --bg-color: #313338;
+        --main-color: #5a65ea;
+        --caret-color: #5a65ea;
+        --sub-color: #565861;
+        --sub-alt-color: #2b2d31;
+        --text-color: #dcdee3;
+        --error-color: #df4f4b;
+        --error-extra-color: #df4f4b;
+        --colorful-error-color: #df4f4b;
+        --colorful-error-extra-color: #df4f4b;
+
+        color-scheme: dark;
+    }
+}
+
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    height: 100vh;
+
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.musicBtnContainer {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 100%;
+}
+
+.musicBtn {
+    width: 7rem;
+    height: 7rem;
+
+    text-align: center;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+
+    /* border-color: var(--sub-alt-color); */
+    border: solid var(--sub-alt-color);
+}
+
+.musicBtn:hover {
+    box-shadow: var(--musicBtn-box-shadow)
+}
+
+/* make box shadow last slightly longer */
+.musicBtn.active {
+    animation: shadowflash 260ms ease-out;
+}
+
+@keyframes shadowflash {
+    0% {
+        box-shadow: none;
+    }
+
+    50% {
+        box-shadow: var(--musicBtn-box-shadow);
+    }
+
+    100% {
+        box-shadow: none;
+    }
+}
+
+.musicBtn.active .text-pop {
+    animation: textpop 150ms ease-out;
+}
+
+@keyframes textpop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
